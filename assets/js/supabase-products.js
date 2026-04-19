@@ -44,10 +44,26 @@ function buildProductCard(p) {
     </article>`;
 }
 
+let currentProducts = [];
+let currentGridId = '';
+
+function renderProducts(products, gridId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+
+  if (!products || !products.length) {
+    grid.innerHTML = '<p style="text-align:center;color:#999;padding:3rem;">No products found.</p>';
+    return;
+  }
+
+  grid.innerHTML = products.map(buildProductCard).join('');
+}
+
 // ── Main loader — call this from each review page ──────────
 // gridId   : id of the <main> or grid element to fill
 // category : string or null/'' to load all
 async function loadProductsIntoGrid(gridId, category) {
+  currentGridId = gridId;
   const grid = document.getElementById(gridId);
   if (!grid) return;
 
@@ -68,16 +84,35 @@ async function loadProductsIntoGrid(gridId, category) {
     });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const products = await res.json();
+    currentProducts = await res.json();
 
-    if (!products.length) {
-      grid.innerHTML = '<p style="text-align:center;color:#999;padding:3rem;">No products found yet. Check back soon!</p>';
-      return;
-    }
-
-    grid.innerHTML = products.map(buildProductCard).join('');
+    renderProducts(currentProducts, gridId);
   } catch (err) {
     console.error('Failed to load products:', err);
     grid.innerHTML = '<p style="text-align:center;color:#c00;padding:3rem;">Could not load products. Please try again later.</p>';
   }
 }
+
+// ── Search functionality ───────────────────────────────────
+function handleSearch(event) {
+  const query = event.target.value.toLowerCase();
+  if (!query) {
+    renderProducts(currentProducts, currentGridId);
+    return;
+  }
+
+  const filtered = currentProducts.filter(p => {
+    const titleMatch = p.title && p.title.toLowerCase().includes(query);
+    const descMatch = p.description && p.description.toLowerCase().includes(query);
+    return titleMatch || descMatch;
+  });
+
+  renderProducts(filtered, currentGridId);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('productSearch');
+  if (searchInput) {
+    searchInput.addEventListener('input', handleSearch);
+  }
+});

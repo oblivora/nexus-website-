@@ -33,4 +33,7 @@ body{background-color:#f9f9f9;color:#1a1a1a;font-family:'Inter',sans-serif;margi
 .bottom-cta h2{font-size:2rem;font-family:'Playfair Display',serif;margin-bottom:1rem}
 .btn-guide{display:inline-block;background:#fff;color:#1a1a1a;border:2px solid #1a1a1a;padding:.8rem 2rem;font-weight:600;text-decoration:none;border-radius:30px;transition:all .3s;margin-right:1rem}
 .btn-guide:hover{background:#1a1a1a;color:#fff}
+.search-bar-container{display:flex;justify-content:center;padding:1rem;background:rgba(255,255,255,0.95);border-bottom:1px solid #eaeaea}
+.search-input{padding:0.8rem 1.5rem;border:1px solid #ccc;border-radius:30px;width:100%;max-width:500px;font-family:'Inter',sans-serif;font-size:1rem;transition:border-color 0.3s}
+.search-input:focus{outline:none;border-color:#1a1a1a}
 @media(max-width:768px){.product-grid{grid-template-columns:1fr}.filter-section{justify-content:flex-start;overflow-x:auto}}
