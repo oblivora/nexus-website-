@@ -239,3 +239,4 @@
     font-size: 2.5rem;
   }
 }
+@media (max-width: 768px) { .hero-content { padding: var(--spacing-md) !important; margin: 0 var(--spacing-sm) !important; max-width: calc(100% - 2rem) !important; } .pinterest-section > div { flex-direction: column !important; text-align: center; } .pinterest-section > div > div { max-width: 100% !important; width: 100% !important; } body { overflow-x: hidden; } }

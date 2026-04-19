@@ -28,6 +28,12 @@ function buildProductCard(p) {
     }
   }
 
+  const isReviewPage = window.location.pathname.includes('/reviews/');
+  const displayProsCons = isReviewPage ? 'block' : 'none';
+  const displayPreviewDesc = isReviewPage ? 'none' : '-webkit-box';
+  const displayFullDesc = isReviewPage ? 'block' : 'none';
+  const displayToggleBtn = isReviewPage ? 'none' : 'inline-block';
+
   return `
     <article class="product-card" id="card-${p.id}">
       <div class="card-image-wrap">
@@ -38,17 +44,17 @@ function buildProductCard(p) {
       </div>
       <div class="card-content">
         <h3 class="card-title">${p.title}</h3>
-        ${p.description ? `<p class="card-desc preview-desc" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${p.description}</p>` : ''}
-        ${p.description ? `<p class="card-desc full-desc" style="display:none;">${p.description}</p>` : ''}
+        ${p.description ? `<p class="card-desc preview-desc" style="display:${displayPreviewDesc};-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${p.description}</p>` : ''}
+        ${p.description ? `<p class="card-desc full-desc" style="display:${displayFullDesc};">${p.description}</p>` : ''}
         ${ratingStr ? `<div class="card-rating"><span class="stars">${ratingStr}</span></div>` : ''}
         
         ${(pros || cons) ? `
-        <div class="pros-cons-box" style="display:none; margin-top:1rem; margin-bottom:1rem; background:#f9f9f9; padding:1rem; border-radius:8px;">
+        <div class="pros-cons-box" style="display:${displayProsCons}; margin-top:1rem; margin-bottom:1rem; background:#f9f9f9; padding:1rem; border-radius:8px;">
           ${pros ? `<div class="pros"><h4 style="color:#2e7d32;margin-top:0;margin-bottom:0.5rem;">Pros</h4><ul style="list-style:none;padding:0;margin:0;font-size:0.9rem;">${pros}</ul></div>` : ''}
           ${cons ? `<div class="cons" style="margin-top:1rem;"><h4 style="color:#c62828;margin-top:0;margin-bottom:0.5rem;">Cons</h4><ul style="list-style:none;padding:0;margin:0;font-size:0.9rem;">${cons}</ul></div>` : ''}
         </div>` : ''}
         
-        <button onclick="toggleReview('${p.id}')" class="view-review-toggle" style="background:none; border:none; padding:0; font-size:0.9rem; color:#666; text-decoration:underline; margin-bottom:1rem; display:inline-block; cursor:pointer; text-align:left; font-family:inherit;">View review &rsaquo;</button>
+        <button onclick="toggleReview('${p.id}')" class="view-review-toggle" style="background:none; border:none; padding:0; font-size:0.9rem; color:#666; text-decoration:underline; margin-bottom:1rem; display:${displayToggleBtn}; cursor:pointer; text-align:left; font-family:inherit;">View review &rsaquo;</button>
         
         <div class="card-bottom" style="margin-top:auto;">
           <span class="price">${priceStr}</span>
