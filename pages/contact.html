@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Agorynx</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+  <style>
+    .contact-container {
+      max-width: 600px;
+      margin: var(--spacing-xl) auto;
+      text-align: center;
+    }
+
+    .contact-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-container p {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-lg);
+      font-size: 1.1rem;
+    }
+
+    .contact-form {
+      text-align: left;
+      background: #fdfbf7;
+      padding: var(--spacing-lg);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: var(--spacing-xs);
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color, #eaeaea);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Agorynx</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="room-styles/index.html">Room Styles</a></li>
+          <li><a href="reviews/index.html">Product Reviews</a></li>
+          <li><a href="shop-the-look/boho-bedroom-look.html">Shop the Look</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="contact-container">
+        <h1>Get in Touch</h1>
+        <p>Have a question about a room style, a product review request, or just want to say hi? We'd love to hear from
+          you.</p>
+
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="hello@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <span class="footer-logo">Agorynx</span>
+        <p>Curated aesthetics for the perfect home.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="room-styles/boho.html">Boho</a>
+        <a href="room-styles/minimalist.html">Minimalist</a>
+        <a href="room-styles/farmhouse.html">Farmhouse</a>
+        <a href="reviews/index.html">Product reviews</a>
+        <a href="shop-the-look/boho-bedroom-look.html">Shop the look</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://in.pinterest.com/nexus0create/" target="_blank">Pinterest</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@oblivora-g4c" target="_blank">YouTube</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="about.html">About me</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="affiliate-disclosure.html">Affiliate disclosure</a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Agorynx Home Decor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

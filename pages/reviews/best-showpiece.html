@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Showpieces | Agorynx</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/layout.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: #fff;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-banner {
+            max-width: 1200px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 12px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .filter-section {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #1a1a1a;
+        }
+
+        .trust-signal {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            padding: 1.5rem 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image-wrap {
+            position: relative;
+            height: 250px;
+        }
+
+        .card-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #1a1a1a;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            color: #1a1a1a;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #777;
+            margin: 0 0 1rem 0;
+            line-height: 1.5;
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .stars {
+            color: #fbbf24;
+            letter-spacing: 2px;
+        }
+
+        .pros-cons-box {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .pc-column h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pros h4 {
+            color: #2e7d32;
+        }
+
+        .cons h4 {
+            color: #c62828;
+        }
+
+        .pc-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .pc-column li {
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.4rem;
+            color: #555;
+        }
+
+        .card-bottom {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .btn-cta {
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .btn-cta:hover {
+            background: #333;
+        }
+
+        .bottom-cta {
+            text-align: center;
+            padding: 3rem 1rem 5rem 1rem;
+            background: #fff;
+        }
+
+        .bottom-cta h2 {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        .btn-guide {
+            display: inline-block;
+            background: #fff;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+
+        .btn-guide:hover {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .newsletter-form {
+            display: inline-flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-input {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            width: 250px;
+        }
+
+        .newsletter-btn {
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-section {
+                justify-content: flex-start;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Agorynx</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../room-styles/index.html">Room Styles</a></li>
+                    <li><a href="index.html" style="color: var(--accent-color);">Product Reviews</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="trust-signal">
+        Affiliate Disclosure: We may earn a commission from purchases made through our links, at no extra cost to you.
+    </div>
+
+    <section class="hero-section">
+        <h1>Best Showpieces for Modern Shelves</h1>
+        <p>Add personality to your bookcases and coffee tables with these curated sculptural decor items.</p>
+        <img src="../../assets/images/hero/showpiece.png" alt="Best Showpieces for Modern Shelves" class="hero-banner">
+    </section>
+
+    <div class="filter-section">
+        <a href="index.html" class="filter-btn" style="text-decoration: none;">All</a>
+        <a href="paintings.html" class="filter-btn" style="text-decoration: none;">Paintings</a>
+        <a href="canvas.html" class="filter-btn" style="text-decoration: none;">Canvas</a>
+        <a href="metal.html" class="filter-btn" style="text-decoration: none;">Metal</a>
+        <a href="decal.html" class="filter-btn" style="text-decoration: none;">Decals</a>
+        <a href="best-desk-lamps.html" class="filter-btn" style="text-decoration: none;">Desk Lamps</a>
+        <a href="best-showpiece.html" class="filter-btn active" style="text-decoration: none;">Showpieces</a>
+        <a href="best-rugs.html" class="filter-btn" style="text-decoration: none;">Rugs</a>
+        <a href="best-sofas.html" class="filter-btn" style="text-decoration: none;">Sofas</a>
+    </div>
+
+    <main class="product-grid">
+        <!--Product 1-->
+        <article class="product-card">
+            <div class="card-image-wrap">
+                <span class="category-badge">Showpiece</span>
+                <img src="https://i.pinimg.com/736x/83/2b/eb/832bebeda021d71cebc217d71a27f922.jpg"
+                    alt="Brown & Black Two Tone Cylindrical Glass Vase">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Brown & Black Two Tone Cylindrical Glass Vase</h3>
+                <p class="card-desc">This vase combines a moody black tint with earthy brown tones, making it a
+                    versatile piece for any home color palette. Easy to clean and effortlessly chic.</p>
+                <div class="card-rating">
+                    <span class="stars">â˜…â˜…â˜…â˜…â˜†</span>
+                    <span>(0 reviews)</span>
+                </div>
+
+                <div class="pros-cons-box">
+                    <div class="pc-column pros">
+                        <h4>Pros</h4>
+                        <ul>
+                            <li>High-End Aesthetic</li>
+                            <li>ts 20cm height and 12cm width make it a great fit for everything from a dining table
+                                centerpiece to a standalone piece on a bookshelf.</li>
+                            <li>Hide Water Stains</li>
+                            <li>Itâ€™s made of thick, premium glass, which gives it enough weight to stay stable even
+                                with
+                                a full bouquet.</li>
+                        </ul>
+                    </div>
+                    <div class="pc-column cons">
+                        <h4>Cons</h4>
+                        <ul>
+                            <li>Like any high-quality glass, itâ€™s fragile and requires careful handling.</li>
+                            <li>Because of the way glass reflects light, the colors can look a bit different in person
+                                compared to the professional studio photosâ€”sometimes appearing darker or more opaque
+                                depending on your room's lighting.</li>
+                            <li>Since the glass is tinted, itâ€™s harder to see the water level at a glance, so you'll
+                                have to manually check it to make sure your flowers aren't thirsty.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-bottom">
+                    <span class="price">â‚¹1,749</span>
+                    <a href="https://myntr.it/rnFkpVW" target="_blank" class="btn-cta">Buy on Myntra</a>
+                </div>
+            </div>
+        </article>
+        <!--Product 2-->
+        <article class="product-card">
+            <div class="card-image-wrap">
+                <span class="category-badge">Showpiece</span>
+                <img src="https://i.pinimg.com/736x/92/ae/3e/92ae3eb78ff3699224e95c92afde494a.jpg"
+                    alt="Blue & Gold Resin Reindeer Statues (Set of 2)">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Blue & Gold Resin Reindeer Statues (Set of 2)</h3>
+                <p class="card-desc">Handcrafted by skilled Indian artisans, featuring a smooth, durable finish that
+                    mimics a high-end luxury aesthetic.</p>
+                <div class="card-rating">
+                    <span class="stars">â˜…â˜…â˜…â˜…â˜†</span>
+                    <span>(494 reviews)</span>
+                </div>
+
+                <div class="pros-cons-box">
+                    <div class="pc-column pros">
+                        <h4>Pros</h4>
+                        <ul>
+                            <li>Aesthetic Appeal</li>
+                            <li>Value for Money</li>
+                            <li>Blends seamlessly with modern, contemporary, or eclectic interior design styles.</li>
+                            <li>Proudly handcrafted by Indian artisans, ensuring unique character in each piece.</li>
+                        </ul>
+                    </div>
+                    <div class="pc-column cons">
+                        <h4>Cons</h4>
+                        <ul>
+                            <li>As they are made of resin, the antlers and delicate parts can be prone to breaking if
+                                dropped or mishandled during transit.</li>
+                            <li>Some users note that the actual color finish may appear slightly duller in person
+                                compared to the brightly lit studio photos.</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-bottom">
+                    <span class="price">â‚¹1,079</span>
+                    <a href="https://amzn.to/3NyW0bL" target="_blank" class="btn-cta">Buy on Amazon</a>
+                </div>
+            </div>
+        </article>
+        <!--Product 3-->
+        <article class="product-card">
+            <div class="card-image-wrap">
+                <span class="category-badge">Showpiece</span>
+                <img src="https://i.pinimg.com/736x/79/de/1c/79de1ce7fd738ec22d87ea02c45f479d.jpg"
+                    alt="Luxury White & Gold Deer Showpiece Set">
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Luxury White & Gold Deer Showpiece Set</h3>
+                <p class="card-desc">Designed to attract peace, prosperity, and positive energy when placed in the east
+                    or northeast direction of your home or workplace, according to Vastu Shastra principles.</p>
+                <div class="card-rating">
+                    <span class="stars">â˜…â˜…â˜…â˜…â˜†</span>
+                    <span>(32 reviews)</span>
+                </div>
+
+                <div class="pros-cons-box">
+                    <div class="pc-column pros">
+                        <h4>Pros</h4>
+                        <ul>
+                            <li>Highly aesthetic, modern design that acts as a strong visual focal point.</li>
+                            <li>The combination of clear glass and gold metal gives it a premium, expensive look.</li>
+                            <li>Made of durable resin, which is less fragile than ceramic or glass</li>
+                        </ul>
+                    </div>
+                    <div class="pc-column cons">
+                        <h4>Cons</h4>
+                        <ul>
+                            <li>As with many handcrafted resin items, slight variations or imperfections in the paint
+                                finish (especially the gold detailing) may occasionally occur.</li>
+                            <li>Glossy resin surfaces can attract dust and require regular, gentle wiping to maintain
+                                their shine.</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-bottom">
+                    <span class="price">â‚¹1,098</span>
+                    <a href="https://amzn.to/4rVSFkX" target="_blank" class="btn-cta">Buy on Amazon</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <section class="bottom-cta">
+        <h2>Need help choosing?</h2>
+        <p>Read our comprehensive guide on selecting the perfect decor for your specific room styling and dimensions.
+        </p>
+        <div>
+            <a href="guide.html" class="btn-guide">Read the Guide</a>
+        </div>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter email for more tips...">
+            <button type="button" class="newsletter-btn">Subscribe</button>
+        </form>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <span class="footer-logo">Agorynx</span>
+                <p>Curated aesthetics for the perfect home.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="../room-styles/boho.html">Boho</a>
+                <a href="../room-styles/minimalist.html">Minimalist</a>
+                <a href="../room-styles/farmhouse.html">Farmhouse</a>
+                <a href="../reviews/index.html">Product reviews</a>
+                <a href="../shop-the-look/boho-bedroom-look.html">Shop the look</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow</h4>
+                <a href="https://in.pinterest.com/nexus0create/" target="_blank">Pinterest</a>
+                <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+                <a href="https://www.youtube.com/@oblivora-g4c" target="_blank">YouTube</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>About</h4>
+                <a href="../about.html">About me</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../privacy.html">Privacy policy</a>
+                <a href="../affiliate-disclosure.html">Affiliate disclosure</a>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>Â© 2026 Agorynx Home Decor. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+/* CSS Variables for Premium Design System */
+:root {
+  /* Colors */
+  --bg-color: #FDFBF7; /* Warm cream */
+  --text-primary: #2C2C2C; /* Soft black, less harsh than pure black */
+  --text-secondary: #6B6B6B;
+  --accent-color: #8A9A86; /* Sage green */
+  --accent-hover: #758671;
+  --white: #FFFFFF;
+  --border-color: #E6E0D4;
+  
+  /* Typography */
+  --font-primary: 'Playfair Display', serif; /* Magazine feel */
+  --font-secondary: 'Inter', sans-serif; /* Clean readable text */
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

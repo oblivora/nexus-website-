@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Styles | Agorynx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/layout.css">
+  <link rel="stylesheet" href="../../assets/css/components.css">
+  <style>
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+    }
+
+    .style-card {
+      background: var(--surface-color, #ffffff);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .style-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .style-content {
+      padding: var(--spacing-md);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .style-title {
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-sm);
+      color: var(--text-primary);
+    }
+
+    .style-desc {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+
+    .btn-view-more {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--accent-color, #1a1a1a);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-view-more:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">Agorynx</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="index.html" style="color: var(--accent-color);">Room Styles</a></li>
+          <li><a href="../reviews/index.html">Product Reviews</a></li>
+          <li><a href="../shop-the-look/boho-bedroom-look.html">Shop the Look</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-lg);">
+        <h1>Curated Room Styles</h1>
+        <p style="margin-top: var(--spacing-sm); color: var(--text-secondary); font-size: 1.1rem;">Discover design
+          styles tailored to your unique aesthetic and easily transform your home.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Boho -->
+        <div class="style-card">
+          <img src="../../assets/images/room/boho-room.png" alt="Boho Style" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Bohemian Oasis</h3>
+            <p class="style-desc">Warm earth tones, natural textures, and a relaxed, lived-in feel for free spirits.</p>
+            <a href="boho.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+
+        <!-- Farmhouse -->
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&h=400&q=80"
+            alt="Farmhouse Style" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Modern Farmhouse</h3>
+            <p class="style-desc">Rustic charm meets modern sleekness. Bright, open, and incredibly inviting.</p>
+            <a href="farmhouse.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+
+        <!-- Hindu Aesthetic -->
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1582560469780-f6fa9d6fbb5f?auto=format&fit=crop&w=600&h=400&q=80"
+            alt="Hindu Aesthetic" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Hindu Aesthetic</h3>
+            <p class="style-desc">Vibrant colors, rich cultural motifs, and spiritual serenity combined.</p>
+            <a href="hinduaisithatic.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+
+        <!-- Maximalist -->
+        <div class="style-card">
+          <img src="../../assets/images/room/modern-room.png" alt="Maximalist Style" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Maximalist</h3>
+            <p class="style-desc">More is more. Bold patterns, eclectic collections, and fearless colors.</p>
+            <a href="maximalist.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+
+        <!-- Minimalist -->
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=600&h=400&q=80"
+            alt="Minimalist Style" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Minimalist</h3>
+            <p class="style-desc">Clean lines, uncluttered spaces, and a focus on essential functionality.</p>
+            <a href="minimalist.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+
+        <!-- Scandinavian -->
+        <div class="style-card">
+          <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=600&h=400&q=80"
+            alt="Scandinavian Style" class="style-image">
+          <div class="style-content">
+            <h3 class="style-title">Scandinavian</h3>
+            <p class="style-desc">Light, airy, and practical. Functional beauty with cozy "hygge" elements.</p>
+            <a href="scandinavian.html" class="btn-view-more">View More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <span class="footer-logo">Agorynx</span>
+        <p>Curated aesthetics for the perfect home.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="../room-styles/boho.html">Boho</a>
+        <a href="../room-styles/minimalist.html">Minimalist</a>
+        <a href="../room-styles/farmhouse.html">Farmhouse</a>
+        <a href="../reviews/index.html">Product reviews</a>
+        <a href="../shop-the-look/boho-bedroom-look.html">Shop the look</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://in.pinterest.com/nexus0create/" target="_blank">Pinterest</a>
+        <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@oblivora-g4c" target="_blank">YouTube</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="../about.html">About me</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy.html">Privacy policy</a>
+        <a href="../affiliate-disclosure.html">Affiliate disclosure</a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Agorynx Home Decor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+
+</html>

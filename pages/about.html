@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Agorynx</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+  <style>
+    .about-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+      margin: var(--spacing-xl) auto;
+      max-width: 1000px;
+    }
+
+    .about-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    .about-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-content p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--spacing-md);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Agorynx</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="room-styles/index.html">Room Styles</a></li>
+          <li><a href="reviews/index.html">Product Reviews</a></li>
+          <li><a href="shop-the-look/boho-bedroom-look.html">Shop the Look</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <div class="about-section">
+        <div class="about-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+            alt="Beautiful minimal living room" class="about-image">
+        </div>
+        <div class="about-content">
+          <h1>Curating beautiful spaces for modern living.</h1>
+          <p>Welcome to Agorynx. We believe that your home should be a reflection of who you areâ€”a calm, inspiring
+            space where aesthetics meet functionality.</p>
+          <p>Founded by passionate interior design enthusiasts, Agorynx is your go-to destination for the latest home
+            decor trends, honest product reviews, and curated room aesthetics. Whether you're drawn to warm minimalism,
+            cozy farmhouse vibes, or eclectic boho layers, we are here to help you bring those visions to life.</p>
+          <p>Our team spends countless hours reviewing products, identifying up-and-coming design trends, and creating
+            "shop the look" guides so you don't have to guess what pieces work well together.</p>
+          <a href="room-styles/index.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">Explore
+            Styles</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <span class="footer-logo">Agorynx</span>
+        <p>Curated aesthetics for the perfect home.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="room-styles/boho.html">Boho</a>
+        <a href="room-styles/minimalist.html">Minimalist</a>
+        <a href="room-styles/farmhouse.html">Farmhouse</a>
+        <a href="reviews/index.html">Product reviews</a>
+        <a href="shop-the-look/boho-bedroom-look.html">Shop the look</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://in.pinterest.com/nexus0create/" target="_blank">Pinterest</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@oblivora-g4c" target="_blank">YouTube</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="about.html">About me</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="affiliate-disclosure.html">Affiliate disclosure</a>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>Â© 2026 Agorynx Home Decor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

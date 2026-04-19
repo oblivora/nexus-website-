@@ -1,0 +1,149 @@
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--text-primary);
+  color: var(--white);
+}
+
+/* Affiliate Buy Now Button - Elegant */
+.btn-buy {
+  background-color: var(--text-primary);
+  color: var(--white);
+  width: 100%;
+  margin-top: var(--spacing-sm);
+}
+
+.btn-buy:hover {
+  background-color: var(--accent-color);
+}
+
+/* Pinterest Save Button Overlay */
+.pin-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-pin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #E60023; /* Pinterest Red */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.pin-wrapper:hover .btn-pin {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Cards & Image Tiles */
+.category-tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3/4; /* 2:3 ratio inspired vertical feel */
+}
+
+.category-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.category-tile:hover img {
+  transform: scale(1.05);
+}
+
+.category-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--spacing-md);
+}
+
+.category-tile h3 {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+/* Product Card */
+.product-card {
+  background: var(--white);
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+}
+
+.product-card .image-wrapper {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  margin-bottom: var(--spacing-sm);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-primary);
+}
+
+.product-price {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Rating Stars */
+.rating {
+  color: #FFB800;
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-xs);
+}
