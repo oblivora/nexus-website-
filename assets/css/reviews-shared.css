@@ -1,0 +1,36 @@
+/* ── Shared styles for all Reviews pages ── */
+body{background-color:#f9f9f9;color:#1a1a1a;font-family:'Inter',sans-serif;margin:0;padding:0;line-height:1.6}
+.hero-section{text-align:center;padding:4rem 1rem;background:#fff}
+.hero-section h1{font-size:3rem;font-family:'Playfair Display',serif;font-weight:700;margin-bottom:1rem}
+.hero-section p{font-size:1.1rem;color:#666;max-width:600px;margin:0 auto 2rem}
+.hero-banner{max-width:1200px;height:400px;margin:0 auto;border-radius:12px;object-fit:cover;width:100%}
+.filter-section{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:1rem;z-index:100;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;border-bottom:1px solid #eaeaea}
+.filter-btn{background:transparent;border:1px solid #ddd;padding:.5rem 1.2rem;border-radius:30px;cursor:pointer;font-size:.95rem;transition:all .3s;font-family:'Inter',sans-serif;text-decoration:none;color:#1a1a1a}
+.filter-btn:hover,.filter-btn.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.trust-signal{text-align:center;font-size:.85rem;color:#666;padding:1.5rem 1rem}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;max-width:1200px;margin:2rem auto 4rem;padding:0 1rem}
+.product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.03);display:flex;flex-direction:column;transition:transform .3s}
+.product-card:hover{transform:translateY(-5px)}
+.card-image-wrap{position:relative;height:250px}
+.card-image-wrap img{width:100%;height:100%;object-fit:cover}
+.card-img-placeholder{width:100%;height:100%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.category-badge{position:absolute;top:1rem;left:1rem;background:rgba(255,255,255,.9);padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a}
+.card-content{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
+.card-title{font-size:1.1rem;font-weight:700;margin:0 0 .5rem;color:#1a1a1a}
+.card-desc{font-size:14px;color:#777;margin:0 0 1rem;line-height:1.5}
+.card-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;font-size:.9rem;color:#444}
+.stars{color:#fbbf24;letter-spacing:2px}
+.pros-cons-box{background:#fdfdfd;border:1px solid #eee;border-radius:8px;padding:1rem;margin-bottom:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.pc-column h4{margin:0 0 .5rem;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px}
+.pros h4{color:#2e7d32}.cons h4{color:#c62828}
+.pc-column ul{list-style:none;padding:0;margin:0;font-size:13px}
+.pc-column li{margin-bottom:.4rem;display:flex;align-items:flex-start;gap:.4rem;color:#555}
+.card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:1rem;border-top:1px solid #eaeaea}
+.price{font-size:1.3rem;font-weight:700;color:#1a1a1a}
+.btn-cta{background:#1a1a1a;color:#fff;text-decoration:none;padding:.6rem 1.2rem;border-radius:6px;font-weight:500;transition:background .3s}
+.btn-cta:hover{background:#333}
+.bottom-cta{text-align:center;padding:3rem 1rem 5rem;background:#fff}
+.bottom-cta h2{font-size:2rem;font-family:'Playfair Display',serif;margin-bottom:1rem}
+.btn-guide{display:inline-block;background:#fff;color:#1a1a1a;border:2px solid #1a1a1a;padding:.8rem 2rem;font-weight:600;text-decoration:none;border-radius:30px;transition:all .3s;margin-right:1rem}
+.btn-guide:hover{background:#1a1a1a;color:#fff}
+@media(max-width:768px){.product-grid{grid-template-columns:1fr}.filter-section{justify-content:flex-start;overflow-x:auto}}
