@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/reviews/">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Review | Agorynx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="/assets/css/layout.css"><link rel="stylesheet" href="/assets/css/components.css"><link rel="stylesheet" href="/assets/css/reviews-shared.css">
+  <style>
+    .single-product-container { max-width: 1000px; margin: 4rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .single-image-wrap { position: relative; border-radius: 12px; overflow: hidden; height: 500px; background: #f9f9f9; }
+    .single-image-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .single-details h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #1a1a1a; }
+    .single-rating { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; font-size: 1rem; color: #444; }
+    .single-price { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2rem; }
+    .single-desc { font-size: 1.05rem; color: #555; line-height: 1.8; margin-bottom: 2rem; }
+    .single-btn-cta { display: inline-block; background: #1a1a1a; color: #fff; padding: 1rem 2.5rem; border-radius: 30px; font-weight: 600; text-decoration: none; transition: background 0.3s; font-size: 1.1rem; }
+    .single-btn-cta:hover { background: #333; color:#fff; }
+    .back-btn { display: inline-block; margin-bottom: 2rem; color: #666; text-decoration: none; font-weight: 500; }
+    .back-btn:hover { color: #1a1a1a; text-decoration: underline; }
+    @media (max-width: 768px) { .single-product-container { grid-template-columns: 1fr; gap: 2rem; } .single-image-wrap { height: 350px; } }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container nav-container"><a href="../index.html" class="logo">Agorynx</a><nav><ul class="nav-links"><li><a href="../index.html">Home</a></li><li><a href="../room-styles/index.html">Room Styles</a></li><li><a href="index.html" style="color:var(--accent-color)">Product Reviews</a></li></ul></nav></div></header>
+  <div class="trust-signal">Affiliate Disclosure: We may earn a commission from purchases made through our links, at no extra cost to you.</div>
+  
+  <div id="singleProductView">
+    <p style="text-align:center; padding: 5rem; color:#999;">Loading review...</p>
+  </div>
+
+  <section class="bottom-cta">
+    <h2>Need help choosing?</h2>
+    <p>Read our guide on selecting decor that matches your room style.</p>
+    <div><a href="guide.html" class="btn-guide">Read the Guide</a></div>
+  </section>
+  <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><span class="footer-logo">Agorynx</span><p>Curated aesthetics for the perfect home.</p></div><div class="footer-col"><h4>Explore</h4><a href="../room-styles/boho.html">Boho</a><a href="../room-styles/minimalist.html">Minimalist</a><a href="../room-styles/farmhouse.html">Farmhouse</a><a href="../reviews/index.html">Product reviews</a></div><div class="footer-col"><h4>Follow</h4><a href="https://in.pinterest.com/nexus0create/" target="_blank">Pinterest</a><a href="#" target="_blank">Instagram</a><a href="https://www.youtube.com/@oblivora-g4c" target="_blank">YouTube</a></div><div class="footer-col"><h4>About</h4><a href="../about.html">About me</a><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy policy</a><a href="../affiliate-disclosure.html">Affiliate disclosure</a></div></div><div class="footer-bottom"><p>© 2026 Agorynx Home Decor. All rights reserved.</p></div></footer>
+  
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/supabase-products.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadSingleProduct('singleProductView');
+    });
+  </script>
+</body>
+</html>

@@ -11,8 +11,9 @@ body{background-color:#f9f9f9;color:#1a1a1a;font-family:'Inter',sans-serif;margi
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;max-width:1200px;margin:2rem auto 4rem;padding:0 1rem}
 .product-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.03);display:flex;flex-direction:column;transition:transform .3s}
 .product-card:hover{transform:translateY(-5px)}
-.card-image-wrap{position:relative;height:250px}
-.card-image-wrap img{width:100%;height:100%;object-fit:cover}
+.card-image-wrap{position:relative;height:250px;overflow:hidden;background:#f9f9f9}
+.card-image-wrap img{width:100%;height:100%;object-fit:cover;transition:all 0.3s ease}
+.product-card:hover .card-image-wrap img{object-fit:contain;transform:scale(1.05)}
 .card-img-placeholder{width:100%;height:100%;background:#eee;display:flex;align-items:center;justify-content:center;font-size:3rem}
 .category-badge{position:absolute;top:1rem;left:1rem;background:rgba(255,255,255,.9);padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#1a1a1a}
 .card-content{padding:1.5rem;display:flex;flex-direction:column;flex-grow:1}
